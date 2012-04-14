@@ -1,4 +1,11 @@
 #! /usr/bin/env node
-require('http').createServer(function (req, res) {
-  res.end('ifil')
-}).listen(process.env.PORT || 2000)
+
+var connect = require('connect')
+var join = require('path').join
+
+console.log(join(__dirname, 'public'))
+
+connect()
+  .use(connect.static('public'))
+  .use(connect.bodyParser())
+  .listen(process.env.PORT || 2000)
