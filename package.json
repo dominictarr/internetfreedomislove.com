@@ -1,0 +1,4 @@
+{
+  "domains": ["ifil.koha.as"],
+  "scripts": { "start": "./index.js" }
+}
