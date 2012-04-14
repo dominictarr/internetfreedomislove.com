@@ -1,4 +1,4 @@
 {
-  "domains": ["ifil.koha.as"],
+  "domains": ["ifil.koha.as", "internetfreedomislove.com"],
   "scripts": { "start": "./index.js" }
 }
