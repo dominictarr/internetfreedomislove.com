@@ -27,7 +27,6 @@ app
         line.push(req.body[k])
       line = line.map(JSON.stringify).join(',') + '\n'
       logStream.write(line)
-      console.log(line)
       res.end(signup)
     })
 
