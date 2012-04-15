@@ -21,12 +21,14 @@ app
   .use(express.bodyParser())
   .use(express.router(function (app) {
 
-    app.all('/signup', function (req, res, next) {
+    app.post('/signup', function (req, res, next) {
       var line = [new Date()]
       for(var k in req.body)
         line.push(req.body[k])
-      line = line.map(JSON.stringify).join(',') + '\n'
-      logStream.write(line)
+      if(line.length > 1) {
+        line = line.map(JSON.stringify).join(',') + '\n'
+        logStream.write(line)
+      }
       res.end(signup)
     })
 
