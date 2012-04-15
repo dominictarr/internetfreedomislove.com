@@ -18,6 +18,7 @@ var logStream = fs.createWriteStream('signup.log', {flags: 'a', encoding: 'utf-8
 var signup = fs.readFileSync('public/signup.html', 'utf-8')
 
 app
+  .use(express.logger())
   .use(express.bodyParser())
   .use(express.router(function (app) {
 
