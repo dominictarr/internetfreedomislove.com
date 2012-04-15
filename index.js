@@ -15,23 +15,25 @@ console.log(join(__dirname, 'public'))
 var logStream = fs.createWriteStream('signup.log', {flags: 'a', encoding: 'utf-8'})
 
 
+var signup = fs.readFileSync('public/signup.html', 'utf-8')
+
 app
-  .use(express.static('public'))
   .use(express.bodyParser())
   .use(express.router(function (app) {
 
-    app.post('/signup', function (req, res) {
+    app.all('/signup', function (req, res, next) {
       var line = [new Date()]
       for(var k in req.body)
         line.push(req.body[k])
       line = line.map(JSON.stringify).join(',') + '\n'
       logStream.write(line)
       console.log(line)
-      res.end('thank you for signing up')
+      res.end(signup)
     })
 
     app.get('/download', function(req, res) {
       fs.createReadStream('signup.log').pipe(res)
     })
   }))
+  .use(express.static('public'))
   .listen(process.env.PORT || 2000)
