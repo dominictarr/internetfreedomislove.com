@@ -6,7 +6,7 @@
       font-family: sans-serif;
       color: hsl(198, 56%, 73%);
     }
-    h1 {
+    h1, h2 {
       color: hsl(197, 66%, 47%);
     }
     #banner {
@@ -19,6 +19,7 @@
     .right {
       width: 350px;
       float: right;
+      padding-top: 20px;
     }
     p {
       margin-left: 30px;
@@ -50,7 +51,34 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .indent {
+    //position: relative;
+    margin-left: 20px;
+  }
+  label {
+  // padding: 20px;
+  }
+
+  .field {
+    padding-top: 10px;
+  }
+  textarea, input {
+    border: 1px solid #BCD7D8;
+  }
+
+  #submit {
+    margin-left: 0px;
+  }
+
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  {
+
   </style>
+  <script src=js/jquery.js></script>
+  <script src=js/ifil.js></script>
   </head>
   <body>
   <div id=banner class=centered>
@@ -75,58 +103,85 @@
       <h2 class=main>
         Keen for an <img src=images/logo_small.jpg>?
        Sign away...</h2>
-      <p> it's love and it always will be</p>
+      <div> It's love and it always will be</div>
       <form name=signup action=signup method=post>
-<label>Name: If we were lovers what would I call you? </label>
-<input name=name>
-<br>
-<label>Email:</label>
-<input name=email></input>
-<br>
-<label>Attending Wellington show on May 26</label>
-<select>
-  <option value=decide>pick one...</option>
-  <option value=yes>Yes</option>
-  <option value=no>No</option>
-  <option value=maybe>Maybe</option>
-</select>
-<br>
-<label>Origin: Where do you live?</label><br>
-<input name=origin></input>
-<br>
-<label>Comment: What would you like to say to UrbanTramper?</label><br>
-<textarea name=comment></textarea>
-<br>
-<label>Privacy: when did you realize that privacy is an outdated concept?</label><br>
-<textarea name=comment></textarea>
-<br>
-<label>Friends: on a scale of 1-10 how often do you experience friend envy?</label><br>
-<input type=text name=friends></input>
-<br>
-<label> Ideally how many corporations would you like us to sell your information to?</label><br>
-<select>
-  <option value=1>1-5</option>
-  <option value=5>5-20</option>
-  <option value=20>20-100</option>
-  <option value=100>100-1000</option>
-  <option value=any>I dont care</option>
-</select>
-<br>
-<label>On a scale of 1-10 rate how comfortable you being internet stalked?</label><br>
-<input name=comfort></input>
-<br>
-<label>skills: how adept are you at internet stalking (1-10)</label><br>
-<input name=skill></input>
-<br>
-<label> describe your best and worst online experiences</label><br>
-<textarea name=experience></textarea>
-<br>
-<label>Attitude:</label>
-<div>
-  <input type=radio name=attitude value=YOLO>YOLO</input><br>
-  <input type=radio name=attitude value=CBF>CBF</input><br>
+<div class=field>
+  <label>Name: If we were lovers what would I call you? </label>
+  <input class=indent name=name>
+  <br>
 </div>
-        <input type=submit value=Submit>
+<div class=field>
+  <label>Email:</label><br>
+  <input class=indent name=email></input>
+  <br>
+</div>
+<div class=field>
+  <label>Will you be attending the Wellington show on May 26, Garret St (8pm sharp)</label>
+  <select>
+    <option value=decide>pick one...</option>
+    <option value=yes>Yes</option>
+    <option value=no>No</option>
+    <option value=maybe>Maybe</option>
+  </select>
+  <br>
+</div>
+<div class=field>
+  <label>Where do you live?</label><br>
+  <input class=indent name=origin></input>
+  <br>
+</div>
+<div class=field>
+  <label>What would you like to say to UrbanTramper?</label><br>
+  <textarea name=comment cols=50 rows=5></textarea>
+  <br>
+</div>
+<div class=field>
+  <label>When did you realize that privacy is an outdated concept?</label><br>
+  <textarea name=comment cols=50 rows=5></textarea>
+  <br>
+</div>
+<div class=field>
+  <label>On a scale of 1-10 how often do you experience friend envy?</label><br>
+  <input class=indent type=text name=friends></input>
+  <br>
+</div>
+<div class=field>
+  <label>How many corporations would you like us to sell your information to, Ideally?</label><br>
+  <select class=indent>
+    <option value=1>1-5</option>
+    <option value=5>5-20</option>
+    <option value=20>20-100</option>
+    <option value=100>100-1000</option>
+    <option value=any>I dont care</option>
+  </select>
+  <br>
+</div>
+<div class=field>
+  <label>On a scale of 1-10 rate how comfortable you being internet stalked?</label><br>
+  <input class=indent name=comfort></input>
+  <br>
+</div>
+<div class=field>
+  <label>How adept are you at internet stalking (1-10)</label><br>
+  <input class=indent name=skill></input>
+  <br>
+</div>
+<div class=field>
+  <label>Describe your best and worst online experiences</label><br>
+  <textarea name=experience cols=50 rows=5></textarea>
+  <br>
+</div>
+<div class=field>
+  <label>What is your attitude?</label>
+  <div class=indent>
+    <input type=radio name=attitude value=YOLO>YOLO</input><br>
+    <input type=radio name=attitude value=CBF>CBF</input><br>
+  </div>
+</div>
+
+<dir class=field>
+  <input id=submit type=submit value=Submit></input>
+</div>
       </form>
     </div>
   </div></div>
