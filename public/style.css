@@ -1,9 +1,10 @@
 body {
   font-family: sans-serif;
-  color: hsl(198, 56%, 73%);
+  
+  color: #94CAE1;
 }
 h1, h2 {
-  color: hsl(197, 66%, 47%);
+  color: #299AC7;
 }
 #banner {
   background: #88D6F8;
