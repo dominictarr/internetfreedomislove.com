@@ -2,6 +2,8 @@
 
 $(function () {
 
+  if(!/Chrome|FireFox/.test(navigator.userAgent))
+    return
   $('input, textarea, select').each(function () {this.required = true})
 
   var inputs = $('.field')
