@@ -1,5 +1,5 @@
 {
   "name": "ifil",
-  "domains": ["ifil.koha.as", "internetfreedomislove.com"],
+  "domains": ["ifil.koha.as", "internetfreedomislove.com", "www.internetfreedomislove.com"],
   "scripts": { "start": "./index.js" }
 }
